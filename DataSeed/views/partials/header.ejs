@@ -1,0 +1,69 @@
+
+
+  <head>
+    <title>Welcome</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
+  
+
+
+  </head>
+  <body>
+  
+  <nav style="" class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="color:gray;" href="/"><strong>DataSeed</strong></a>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+       
+      <ul class="nav navbar-nav navbar-right">
+      
+      <% if(locals.user) { %>
+      
+   
+        <li><a href="/users/logout">Logout <i class="fas fa-sign-out-alt"></i>
+        <li><a href="/general/profile/<%=locals.user._id%>">View Profile <i class="fas fa-sign-out-alt"></i></a></li>
+         <li><a href="/general/profile/<%=locals.user._id%>/mypurchases">My Purchases <i class="fas fa-sign-out-alt"></i></a></li>
+        <li><a href="/checklist">Cart <i class="fas fa-sign-out-alt"></i></a></li>
+        <li><a href="/getdata"> Download Data <i class="fas fa-sign-out-alt"></i></a></li>
+        <li><a href="/message"> Open Chat <i class="fas fa-sign-out-alt"></i></a></li>
+      
+      <%}else{%>
+        <li><a href="/users/login"><i class="fas fa-user-circle"></i>Login</a></li>
+        <li><a href="/users/register/buyer"><i class="fas fa-user-plus"></i>Register</a></li>
+        <li><a href="/users/register/seller"><i class="fas fa-store"></i>Become A Seller</a></li>
+        <li><a href="/checklist">My Checklist <i class="fas fa-sign-out-alt"></i></a></li>
+      
+      <%}%>  
+       
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
+
+  <div class='container'>
+  <%if (locals.messages && locals.messages.length>0) {%>
+     <div class="alert alert-danger"><%=locals.messages%></div>
+   <%}%>
+ </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.js"></script>

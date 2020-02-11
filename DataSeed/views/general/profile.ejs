@@ -1,0 +1,313 @@
+<%include ../partials/header%> 
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+<style>
+body{
+  font-family: Montserrat;
+  }
+hr.style18 { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+} 
+hr.style18:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    /*height: 10/0%;*/
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profile-head h5{
+    color: #333;
+}
+.profile-head h6{
+    color: #0062cc;
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profile-work ul{
+    list-style: none;
+}
+.profile-tab label{
+    font-weight: 600;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #0062cc;
+}
+</style>
+
+
+
+
+<!--<p>Name :<%=profile.name%></p>-->
+<!--<p>Userr name:<%=profile.username%></p>-->
+<!--<p>Email:<%=profile.email%></p>-->
+
+<!--<%if(account.length!=0){%>-->
+
+<!--<p>Account Holder:<%=account[0].accountholder%></p>-->
+
+<!--<p>Amount:<%=account[0].currentamount%></p>-->
+<!--<p>Transfered:<%=account[0].transferedamount%></p>-->
+<!--<%}%>-->
+<!--<%if(user.as=="seller"){%>-->
+<!--<div>-->
+<!--  <a href="/seller/sell" class='btn btn-lg btn-primary'>Add New Sell Data</a>-->
+<!--  <br>-->
+  
+  <!--<a href="/general">Category View </a>-->
+<!--  <a href="/seller/mydata" class="btn btn-danger">View my data</a>-->
+<!--</div>  -->
+
+<!--<%}%>-->
+
+
+
+
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container emp-profile">
+            
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="http://www.trentcap.com/wp/wp-content/uploads/2012/02/sample-img-200x200.png" alt=""/>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="padding-left: 120px;" class="profile-head">
+                                    <h3 style="color:gray;border: 1px green solid;border-radius:50px">
+                                       <%=profile.name%>
+                                    </h3>
+                                    <h5>
+                                        Web Developer and Designer
+                                    </h5>
+                                    <!--<p class="proile-rating">RANKINGS : <span>8/10</span></p>-->
+                            <!--<ul class="nav nav-tabs" id="myTab" role="tablist">-->
+                            <!--    <li class="nav-item">-->
+                            <!--        <a style="color:gray;" class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>-->
+                            <!--    </li>-->
+                            <!--    <li class="nav-item">-->
+                            <!--        <a style="color:gray;" class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>-->
+                            <!--    </li>-->
+                            <!--</ul>-->
+                        </div>
+                    </div>
+                    
+                    <!--<form>-->
+                    
+                    
+                    <div class="col-md-2">
+                        
+                        
+                        <input style="width: 170px" type="submit" class="btn btn-primary" name="btnAddMore" value="Edit Profile"/>
+                        
+                        <form action="/downloaddata" method="GET">
+                        <input style="width: 170px;padding-top: 10px;margin-top:10px;" type="submit" class="btn btn-primary"  value="Download DataSets"/>
+                        </form>
+                       
+                       <form action="/general/profile/<%=locals.user._id%>/mypurchases" method="GET">
+                       <input style="width: 170px;padding-top: 10px;margin-top:10px;" type="submit" class="btn btn-primary" value="My Purchases"/>
+                        </form>
+                    </div>
+                    
+                    <!--</form>-->
+                    
+                </div>
+                <div class="row">
+                    <div style="margin-top: 100px;" class="col-md-4">
+                        <div class="profile-work">
+                            <p>About Me</p>
+                            <p>... </p>
+                            <!--<p>SKILLS</p>-->
+                            <!--<a href="">Web Designer</a><br/>-->
+                            <!--<a href="">Web Developer</a><br/>-->
+                            <!--<a href="">WordPress</a><br/>-->
+                            <!--<a href="">WooCommerce</a><br/>-->
+                            <!--<a href="">PHP, .Net</a><br/>-->
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div style="color:gray;">
+                                        <div  class="row">
+                                            <div class="col-md-6">
+                                                <label>Username</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=profile.username%></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=profile.name%></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=profile.email%></p>
+                                            </div>
+                                        </div>
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-md-6">-->
+                                            <!--    <label>Phone</label>-->
+                                            <!--</div>-->
+                                        <!--    <div class="col-md-6">-->
+                                        <!--        <p>123 456 7890</p>-->
+                                        <!--    </div>-->
+                                        <!--</div>-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Web Developer and Designer</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <hr class="style18">
+                            <div style="color:gray;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Experience</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Hourly Rate</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>10$/hr</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Total Projects</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>230</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>English Level</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Availability</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>6 months</p>
+                                            </div>
+                                        </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Your Bio</label><br/>
+                                        <p>Your detail description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                       
+        </div>

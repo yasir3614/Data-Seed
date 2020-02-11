@@ -1,0 +1,59 @@
+
+
+<%include ../partials/header%> 
+
+<div class="container">
+
+
+<div class="caption">
+
+    <h4><%= data[0].category %></h4>
+</div> 
+    <!--    <% data.forEach(function(data){ %>-->
+    <!--<div class="row text-center" style="display: flex; flex-wrap: wrap;">-->
+    <!--<div class="card1">-->
+ 
+    <!--        <div class="col-md-12 col-sm-12">-->
+    <!--            <div class="thumbnail">-->
+    <!--             <img  src="../image/cat.png"></img>-->
+    <!--                <div class="caption">-->
+    <!--                    <h4><%= data.title %></h4>-->
+    <!--                </div>-->
+    <!--                <div class="caption">-->
+    <!--                    <h4><%= data.description %></h4>-->
+    <!--                </div>-->
+
+    <!--                <p>-->
+    <!--                    <a href="/general/detail/<%=data.title%>" class="btn btn-warning"><b>More Info</b></a>-->
+    <!--                </p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <% }); %>-->
+    
+
+ 
+<% data.forEach(function(data){ %>
+    <div class="col-md-4 col-sm-6" >
+        <div class="card1" style="height: 600px;display: flex; flex-wrap: wrap;justify-content: space-between;
+flex-direction: column;">
+
+          <img src="../image/cat.png" style="width:100%;">
+         <div> 
+         <h1 style="color:black;"><%= data.title %></h1>
+          <h3 style="color:black;" class="price">$<%=data.price%></h3>
+          <h4 style="color:black;"><%=data.description%></h4>
+          
+           </div>
+          <button class="btn btn-info"><a href="/general/detail/<%=data._id%>">Checkout & Info</a></button>
+          <button class="btn btn-primary"><a href="/checklist/<%=data._id%>">Add to checklist</a></button>
+        </div>
+       
+    </div>
+<% }); %>
+    
+</div>
+
+
+
+<%include ../partials/footer%>

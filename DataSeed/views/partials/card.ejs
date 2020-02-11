@@ -1,0 +1,81 @@
+<%include header%> 
+
+<div class="container">
+<h2>Categories</h2>
+ <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+        <% cats.forEach(function(cat){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                 <img  src="<%=cat.img%>"></img>
+                    <div class="caption">
+                        <h4><%= cat.name %></h4>
+                    </div>
+                    <p>
+                        <a href="/general/<%=cat.name%>" class="btn btn-warning"><b>More Info</b></a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+ <!--<div class="row text-center" style="display: flex; flex-wrap: wrap;">-->
+ <!--   <div class="container">-->
+ <!--        <div class="col-md-3 col-sm-6">-->
+ <!--               <div class="thumbnail">-->
+ <!--                <img  src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/befbcde0-9b36-11e6-95b9-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg"></img>-->
+ <!--                   <div class="caption">-->
+ <!--                       <h4>Category Name</h4>-->
+ <!--                   </div>-->
+ <!--                   <p>-->
+ <!--                       <a href="#" class="btn btn-primary">More Info</a>-->
+ <!--                   </p>-->
+ <!--               </div>-->
+ <!--        </div>-->
+ <!--         <div class="col-md-3 col-sm-6">-->
+ <!--               <div class="thumbnail">-->
+ <!--                <img  src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/befbcde0-9b36-11e6-95b9-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg"></img>-->
+ <!--                   <div class="caption">-->
+ <!--                       <h4>Category Name</h4>-->
+ <!--                   </div>-->
+ <!--                   <p>-->
+ <!--                       <a href="#" class="btn btn-primary">More Info</a>-->
+ <!--                   </p>-->
+ <!--               </div>-->
+ <!--        </div>-->
+ <!--        <div class="col-md-3 col-sm-6">-->
+ <!--               <div class="thumbnail">-->
+ <!--                <img  src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/befbcde0-9b36-11e6-95b9-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg"></img>-->
+ <!--                   <div class="caption">-->
+ <!--                       <h4>Category Name</h4>-->
+ <!--                   </div>-->
+ <!--                   <p>-->
+ <!--                       <a href="#" class="btn btn-primary">More Info</a>-->
+ <!--                   </p>-->
+ <!--               </div>-->
+ <!--        </div>-->
+ <!--       <div class="col-md-3 col-sm-6">-->
+ <!--               <div class="thumbnail">-->
+ <!--                <img  src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/befbcde0-9b36-11e6-95b9-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg"></img>-->
+ <!--                   <div class="caption">-->
+ <!--                       <h4>Category Name</h4>-->
+ <!--                   </div>-->
+ <!--                   <p>-->
+ <!--                       <a href="#" class="btn btn-primary">More Info</a>-->
+ <!--                   </p>-->
+ <!--               </div>-->
+ <!--        </div>-->
+ <!--                  <div class="col-md-3 col-sm-6">-->
+ <!--               <div class="thumbnail">-->
+ <!--                <img  src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/befbcde0-9b36-11e6-95b9-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg"></img>-->
+ <!--                   <div class="caption">-->
+ <!--                       <h4>Category Name</h4>-->
+ <!--                   </div>-->
+ <!--                   <p>-->
+ <!--                       <a href="#" class="btn btn-primary">More Info</a>-->
+ <!--                   </p>-->
+ <!--               </div>-->
+ <!--        </div>-->
+         
+ <!--   </div>    -->
+ <!--   </div>        -->
+                    

@@ -1,0 +1,104 @@
+<%include ../partials/header%>
+
+
+
+<style>
+
+#customers {
+  /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+#customers tr{
+    font-weight: bold;
+    color:gray;
+    }
+    
+#demoFont {
+width: 33.33%;
+font-size: 50px;
+word-spacing: 2.6px;
+color: #000000;
+font-weight: 700;
+text-decoration: solid rgb(68, 68, 68);
+font-style: normal;
+text-transform: none;
+margin-top:20px;
+margin-bottom: 10px;
+color:white;
+border: 1px white solid;
+margin-left:33.33%;
+}
+
+#records{
+    
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    font-color: red;
+    
+    }
+</style>
+
+
+
+
+
+<div class='container'>
+<div id="demoFont">Reciepts</div>
+
+<%if(reciept=="") { %>
+        <div id="records">No Records Found!</div>
+    <% } else { %>
+    
+    <table id="customers">
+      <tr>
+        <th>TimeStamp</th>
+        <th>Data Set Name</th>
+        <th>Vendor</th>
+        <th>Purchaser</th>
+        <th>Price Marked</th>
+        <th>Token Number</th>
+        <th>Purchased Over CC</th>
+      </tr>
+      
+      
+          
+
+      
+    <%reciept.forEach(function(reciept){%>
+    
+
+      <tr>
+      <td><%=reciept.datecreated%></td>
+        <td><%=reciept.datasetname%></td>
+        <td><%=reciept.seller%></td>
+        <td><%=reciept.buyer%></td>
+        <td><%=reciept.priceofdata%></td>
+        <td><%=reciept.token%></td>
+        <td><%=reciept.creditcardnumber%></td>
+      </tr>
+    
+    
+    <% }); %>
+    <% } %>
+    </table>
+</div>
+

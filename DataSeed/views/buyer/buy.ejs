@@ -1,0 +1,49 @@
+<%include ../partials/header%>
+
+<h1>Terms And Conditions </h1>
+<h3>Please read all the terms carefully before payment!</h3>
+<!--<%=data%>-->
+
+
+<div ng-if="UserInfo.approvedTermsAndConditions || !UserInfo.isAuthenticated">
+	<ncy-breadcrumb></ncy-breadcrumb>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<form method="POST" action="/buyer/buy/<%=data%>">
+				<div class="panel panel-default" style="margin-top:20px;">
+					<div class="panel-body" style="max-height:600px; overflow-y:scroll; background-color:white;">
+						<div style="text-align:center;">
+							
+							<p>
+  <ol style="color:black;">
+    <li>∑ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+    <li>∑ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Epsum factorial non deposit quid pro quo hic escorol. 
+    <li>∑ Souvlaki ignitus carborundum e pluribus unum. 
+    <li>∑ Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. 
+    <li>∑ Quote meon an estimate et non interruptus stadium. 
+    <li>∑ Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. 
+    <li>∑ Epsum factorial non deposit quid pro quo hic escorol. 
+  </ol>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div style="text-align:center;" ng-if="settings.Authentication.RequireTermsAndConditions && !UserInfo.approvedTermsAndConditions && UserInfo.isAuthenticated">
+					<input type="checkbox" name="check">Accept and Confirm Payment<br>
+          <!--<input type="submit" >-->
+					<button style="margin:20px;" class="btn btn-primary" type="submit">Proceed to Verification</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<!--<form action="/buyer/buy/<%=data%>"  method="POST">-->
+<!--  <input type="checkbox" name="check">accept the terms<br>-->
+<!--  <input type="submit" >-->
+<!--</form>-->
+
+<%include ../partials/footer%>

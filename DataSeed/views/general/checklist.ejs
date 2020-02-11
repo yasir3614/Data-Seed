@@ -1,0 +1,30 @@
+
+
+<%include ../partials/header%> 
+
+<div class="container">
+
+<h1> This is checklist </h1>
+<%if(data.length==0){%>
+    <h1> Your checklist is empty</h1>
+<%}{%>
+ 
+<% data.forEach(function(data){ %>
+    <div class="col-md-4 col-sm-6" >
+        <div class="card1" style="min-height: 500px;display: flex; flex-wrap: wrap;justify-content: space-between;
+flex-direction: column;">
+
+          <img src="../image/cat.png" style="width:100%;">
+         <div> 
+         <h1 style="color:black;"><%= data.title %></h1>
+          <h3 style="color:black;" class="price">$<%=data.price%></h3>
+          <h4 style="color:black;"><%=data.description%></h4>
+           </div>
+          <button><a href="/general/detail/<%=data._id%>">Checkout & Info</a></button>
+        </div>
+       
+    </div>
+<% }); }%>
+    
+</div>
+

@@ -1,0 +1,132 @@
+<%include ../partials/header%> 
+
+<!--<div class="container-fluid">-->
+<!--	<div class="row">-->
+<!--		<div class="col-md-12" style="margin-top:50px;">-->
+<!--			<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" style="border-radius:50%;" />-->
+<!--			<p style="font-size:80px;">-->
+<!--				<%=data.title %>-->
+<!--			</p>-->
+			
+<!--			<div style="margin-right:15%;margin-left:15%;border: 2px solid white;-->
+<!--  border-radius: 50px;margin-bottom:10px;">-->
+<!--			<p>-->
+<!--				<strong><%= data.description %></strong>-->
+<!--			</p> -->
+<!--				<p>-->
+<!--				<strong>$<%= data.price %>.00</strong>-->
+<!--			</p>-->
+<!--			</div>-->
+			
+			
+			
+<!--			<button type="button" class="btn btn-success push-right">-->
+<!--			<span class="glyphicon glyphicon-usd" aria-hidden="true"></span><a href="/buyer/buy/<%=data._id%>">Buy Now</a>	-->
+<!--			</button>-->
+			
+			
+			
+<!--		</div>-->
+		
+<!--	</div>-->
+<!--<table class="table">-->
+<!--  <thead>-->
+<!-- Content -->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--	<%for (i in file){%>-->
+<!--		    <tr>-->
+	
+<!--		<% if(i<data.rows_)for(x in file[i] ){%>-->
+<!--		      <td><%= file[i][x]%> </td>-->
+	
+<!--			<div><%= file[i][x]%>  </div>-->
+	
+<!--	<%}%>-->
+<!--		    </tr>-->
+
+	
+<!--	<%}%>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+
+
+
+
+
+
+<!--</div>-->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				<div>
+					<div>
+						<div>
+							<div>
+								<div class="_5WizN _1QzSN">
+									<div class="_3YmQx">
+										<div class="_3QdKe">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div style="height:100px;border:2px white solid;border-radius:0px;" class="col-md-4">
+					<h3>
+					<%=data.title%>
+					</h3>
+				</div>
+				<div style="height:100px;border:2px white solid;border-radius:0px;" class="col-md-8">
+					<p>
+						<h3>Details</h3>
+						<b><%=data.description%></b>
+					</p>
+				</div>
+			</div> 
+			<div style="margin-top: 30px;">
+				
+			<a href="/buyer/buy/<%=data._id%>">	<button type="button" class="btn btn-success push-right">-->
+			<span class="glyphicon glyphicon-usd" aria-hidden="true"></span>Buy Now
+			</button></a>	
+			</div>
+			
+		</div>
+	</div>
+	<div class="row">
+	<hr>
+		<div style="margin-top: 10px;border: 1px white solid;border-radius:5px;" class="col-lg-12">
+		<table class="table">
+  <thead>
+ <h2>Sample Data</h2> 
+  </thead>
+  <tbody>
+	<%for (i in file){%>
+		    <tr>
+	
+		<% if(i<data.rows_)for(x in file[i] ){%>
+		
+		      <td><%= file[i][x]%> </td>
+	
+			<!--<div><%= file[i][x]%>  </div>-->
+	
+	<%}%>
+		    </tr>
+
+	
+	<%}%>
+  </tbody>
+</table>
+		</div>
+	</div>
+	
+	
+	
+</div>
+
